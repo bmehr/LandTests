@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Wells3</title>
+    <title>Project Wells</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+    <div id="unity-container" class="unity-desktop" style="width:100%; height:100%;">
+      <canvas id="unity-canvas" style="width:100%; height:100%;"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -17,10 +17,10 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
+      <div id="unity-footer" style="display: none;">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Wells3</div>
+        <div id="unity-build-title">Project Wells</div>
       </div>
     </div>
     <script>
@@ -56,14 +56,14 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Wells3.loader.js";
+      var loaderUrl = buildUrl + "/web.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Wells3.data",
-        frameworkUrl: buildUrl + "/Wells3.framework.js",
-        codeUrl: buildUrl + "/Wells3.wasm",
+        dataUrl: buildUrl + "/web.data.gz",
+        frameworkUrl: buildUrl + "/web.framework.js.gz",
+        codeUrl: buildUrl + "/web.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "SCS",
-        productName: "Wells3",
+        companyName: "DefaultCompany",
+        productName: "Project Wells",
         productVersion: "0.1",
         showBanner: unityShowBanner,
       };
@@ -82,8 +82,6 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
       }
       loadingBar.style.display = "block";
 
